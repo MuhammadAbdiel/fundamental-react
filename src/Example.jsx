@@ -1,5 +1,5 @@
 import { Link, Route, Routes } from "react-router-dom";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import LocaleContext from "./context/LocaleContext";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -10,9 +10,9 @@ import Counter from "./pages/Counter";
 export default function Example() {
   const [locale, setLocale] = useState("en");
 
-  const toggleLocale = useCallback(() => {
+  const toggleLocale = () => {
     setLocale((locale) => (locale === "en" ? "id" : "en"));
-  }, []);
+  };
 
   return (
     <LocaleContext.Provider value={{ locale, toggleLocale }}>
