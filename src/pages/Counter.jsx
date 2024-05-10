@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function Counter() {
   const [count, setCount] = useState(0);
+  // const [reset, setReset] = useState(false);
 
   useEffect(() => {
     console.log("count:", count);
