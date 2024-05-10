@@ -14,6 +14,10 @@ export default function Example() {
     setLocale((locale) => (locale === "en" ? "id" : "en"));
   };
 
+  // const contextValue = useMemo(() => {
+  //   return { locale, toggleLocale };
+  // }, [locale]);
+
   return (
     <LocaleContext.Provider value={{ locale, toggleLocale }}>
       <nav>
