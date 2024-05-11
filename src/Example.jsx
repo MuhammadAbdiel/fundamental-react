@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Posts from "./pages/Posts";
 import UserProfile from "./pages/UserProfile";
 import Counter from "./pages/Counter";
+import PostId from "./pages/PostId";
 
 export default function Example() {
   const [locale, setLocale] = useState("en");
@@ -33,6 +34,7 @@ export default function Example() {
           element={<UserProfile name="John Doe" age={30} />}
         />
         <Route path="/posts" element={<Posts />} />
+        <Route path="/posts/:id" element={<PostId />} />
         <Route path="/count" element={<Counter />} />
       </Routes>
     </LocaleContext.Provider>

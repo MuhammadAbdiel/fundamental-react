@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Posts extends Component {
   constructor(props) {
@@ -10,8 +11,6 @@ class Posts extends Component {
   }
 
   componentDidMount() {
-    // Metode ini dipanggil setelah komponen pertama kali dirender ke DOM
-    // Biasanya digunakan untuk melakukan fetching data dari server
     setTimeout(() => {
       fetch("https://jsonplaceholder.typicode.com/posts")
         .then((response) => {
@@ -27,8 +26,6 @@ class Posts extends Component {
   }
 
   componentDidUpdate() {
-    // Metode ini dipanggil setiap kali komponen di-render ulang
-    // Biasanya digunakan untuk melakukan memperbarui data state
     console.log("Komponen telah di-render ulang");
   }
 
@@ -45,7 +42,9 @@ class Posts extends Component {
         <ul>
           {posts.map((post) => (
             <li key={post.id}>
-              <h2>{post.title}</h2>
+              <h2>
+                <Link to={`/posts/${post.id}`}>{post.title}</Link>
+              </h2>
               <p>{post.body}</p>
             </li>
           ))}
